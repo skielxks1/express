@@ -1,17 +1,18 @@
+import "dotenv"
 import express from 'express'
 
-// crear instancia
+// create instance of express
 const app=express()
-const PORT=8000
+const PORT = process.env.PORT
 
-//Especificar JSON
-app.use(express.json());
+//Verify the JSON fuke
+app.use(express.json());    
 
-// crear endpoints
+// making the endpoints
 app.get("/", (req, res)=>{
-    //buscar en la base de datos
-    console.log("Alguien consulto el endpoint")
-    res.status(200).json({message:"endpoint de obtener funcionando"})
+    //searching in the database
+    console.log("Someone have browsed the endpoint")
+    res.status(200).json({message:"Get endpoint working"})
 })
 
 app.post("/create",(req, res)=>{
