@@ -48,3 +48,17 @@ encriptar usamos la libreria bcryptjs
 JWT jason web token-- estandar para poder hacer inicios de sesion en una aplicacion
 https://www.jwt.io/
 
+Creamos el archivo auth.routes.js y agregamos
+import {Router} from 'express';
+const authRouter = Router();
+
+luego llevarlo al index.js
+import authRouter from "./routes/auth.routes.js"
+
+luego registar el endpoint
+app.use("/auth", authRouter)
+
+editamos el authrouter.js
+
+agregamos un jwt secret
+

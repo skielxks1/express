@@ -2,6 +2,8 @@ import "dotenv/config"
 import express from 'express'
 
 import usersRouter from "./routes/users.routes.js"
+import authRouter from "./routes/auth.routes.js"
+
 import apiKeyMiddleware from "./middleware/apk.middleware.js"
 
 // create instance of express
@@ -16,6 +18,7 @@ app.use(apiKeyMiddleware)
 
 //Endpoints
 app.use("/", usersRouter)
+app.use("/auth", authRouter)
 
 
 
